@@ -12,7 +12,7 @@
                 {{ post.content }}
             </div>
             <div class="card-footer text-left text-muted">
-                <a href="{% url 'post_edit' post.pk %}">Edit</a> | <a href="{% url 'post_delete' post.pk %}">Delete </a>
+                    <a class="badge badge-light" href="{% url 'post_edit' post.pk %}">Edit</a>  <a class="badge badge-light" href="{% url 'post_delete' post.pk %}">Delete </a>
             </div>
         </div>
         <br />
