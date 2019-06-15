@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock title %}
 {% block content %}
-{% if user.is_authenticated %}
-    Hello {{ user.username }}
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
+<div class="container">
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Blog with Comments App</h5>
+    <p class="card-text">This blog is built with Django to test out ability to add comments to blog posts</p>
+    <a href="{% url 'post_list' %}" class="btn btn-primary">View All Posts</a>
+  </div>
+</div>
 
-    <p>
-      Please <a href="{% url 'login' %}">log in</a> or
-      <a href="{% url 'signup' %}">sign up</a>
-    </p>
+{% endblock content %}
 
-{% endif %} {% endblock content %}
+
+
