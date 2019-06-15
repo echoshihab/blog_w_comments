@@ -5,14 +5,14 @@
 {% for post in object_list %}
     <div class="card">
             <div class="card-header">
-                <span class="font-weight-bold">{{ post.title }} </span> &middot;
+                <span class="font-weight-bold">{{ post.title }} </span>
                 <span class="text-muted"> by {{ post.author }} on {{ post.date }} </span>
             </div>
             <div class="card-body">
                 {{ post.content }}
             </div>
             <div class="card-footer text-left text-muted">
-                <a href="#">Edit</a> | <a href="#">Delete </a>
+                <a href="{% url 'post_edit' post.pk %}">Edit</a> | <a href="{% url 'post_delete' post.pk %}">Delete </a>
             </div>
         </div>
         <br />
