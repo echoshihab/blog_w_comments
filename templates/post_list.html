@@ -10,9 +10,17 @@
             </div>
             <div class="card-body">
                 {{ post.content }}
+                <div>
+                    <a class="badge badge-light" href="{% url 'post_edit' post.pk %}">Edit</a>  <a class="badge badge-light" href="{% url 'post_delete' post.pk %}">Delete </a>
+                </div>
             </div>
             <div class="card-footer text-left text-muted">
-                    <a class="badge badge-light" href="{% url 'post_edit' post.pk %}">Edit</a>  <a class="badge badge-light" href="{% url 'post_delete' post.pk %}">Delete </a>
+                {% for comment in post.comments.all %}
+                    <p>
+                        <span class="font-weight-bold">{{ comment.author }} : </span>
+                            {{ comment }}
+                    </p>
+                {% endfor %}
             </div>
         </div>
         <br />
